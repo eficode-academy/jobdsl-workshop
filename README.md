@@ -47,8 +47,8 @@ Contains basic Jenkins Docker image setup required for the workshop.
 * Kick off new container
  
 ```shell
-  cd jenkins-checkpoints-demo
-  docker run -p 8080:8080 checkpoints-demo
+  cd jobdsl-workshop
+  docker run -p 8080:8080 jobdsl-workshop
 ```
 
 * After few seconds you should be able to see Jenkins page in your browser at localhost:8080! Time to do things!
