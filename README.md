@@ -22,7 +22,7 @@ Contains basic Jenkins Docker image setup required for the workshop.
 * Setup port forwarding in order to be able to access web pages from Docker container in browser on the host machine
 
 ```shell
-  VBoxManage controlvm jenkins-checkpoints-demo natpf1 "HTTP,tcp,127.0.0.1,4000,,4000"
+  VBoxManage controlvm jobdsl-workshop natpf1 "HTTP,tcp,127.0.0.1,8080,,8080"
 ```  
 
 * Jump into virtual machine by running
