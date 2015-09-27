@@ -1,4 +1,4 @@
-# JobDSL workshop base repo
+# JobDSL workshop
 
 Contains basic Jenkins Docker image setup required for the workshop.
 
@@ -31,10 +31,14 @@ Contains basic Jenkins Docker image setup required for the workshop.
   docker-machine ssh jobdsl-workshop
 ```
 
+# Setup on Linux
+
+Make sure that you have Docker installed. If not then how to is [here]((https://docs.docker.com/installation/ubuntulinux/))
+
 * Clone this repo or transfer existing one into virtual machine using docker-machine scp
 
 ```shell
-  git clone https://github.com/Praqma/jobdsl-workshop-base.git
+  git clone https://github.com/Praqma/jobdsl-workshop.git
 ```
 
 * Build docker image
