@@ -53,4 +53,4 @@ Contains basic Jenkins Docker image setup required for the workshop.
 
 * After few seconds you should be able to see Jenkins page in your browser at localhost:8080! Time to do things!
 
-* Follow assigments from [JonDSL workshop GitHub Classroom](https://classroom.github.com/organizations/644249-jobdsl-workshop)
+* Follow assignments from [JonDSL workshop GitHub Classroom](https://classroom.github.com/organizations/644249-jobdsl-workshop)
