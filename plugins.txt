@@ -1,1 +1,10 @@
 job-dsl:1.37
+copyartifact:1.36
+git:2.4.0
+credentials:1.22
+git-client:1.18.0
+scm-api:0.2
+mailer:1.15
+matrix-project:1.4
+ssh-credentials:1.11
+

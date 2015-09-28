@@ -7,9 +7,18 @@ Contains basic Jenkins Docker image setup required for the workshop.
 * Dockerfile - Thin docker build file. All magic is done in [Jenkins official build file](https://github.com/jenkinsci/docker/tree/9395d3fdd74cd43f03b1844fbb0c3e48d713cbc1). I'm only providing list of plugins to install and few groovy scripts for initial configuration 
 * plugins.txt - list of plugins that will be automatically installed. All versions of the plugins fixed as well as Jenkins version in order to ensure reproducibility of the setup as time goes.
   * [job-dsl](https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin) - JobDSL plugin
+  * [copyartifact](https://wiki.jenkins-ci.org/display/JENKINS/Copy+Artifact+Plugin) - Copy artifact plugin. Required for creation of CI job as well as next one
+  * [git](https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin) - Git plugin.
+  * Dependencies for Git plugin
+    * credentials
+    * git-client
+    * scm-api
+    * mailer
+    * matrix-project
+    * ssh-credentials
 * quietperiod.groovy - set global Quiet Period to 0
 * executors.groovy - set number of executors on master to 0
-
+* createjob.groovy - will create job required to prebuild JobDSL jar file
 
 ## Setup on Mac OS and Windows
 
@@ -60,7 +69,7 @@ Make sure that you have Docker installed. If not then how to is [here]((https://
 ## Assignments
 
 * Follow [JobDSL tutorial](https://github.com/jenkinsci/job-dsl-plugin/wiki/Tutorial---Using-the-Jenkins-Job-DSL) and create simple job
-* Learn how to build your JobDSL specification and setup CI job for it
+* Learn [how to build your JobDSL specification](https://github.com/jenkinsci/job-dsl-plugin/wiki/User-Power-Moves#run-a-dsl-script-locally) and setup CI job for it
 * Learn how to use configure block
 * Try templates and libraries
 * Team work
