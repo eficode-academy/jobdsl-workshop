@@ -34,6 +34,12 @@ Contains basic Jenkins Docker image setup required for the workshop.
   VBoxManage controlvm jobdsl-workshop natpf1 "HTTP,tcp,127.0.0.1,8080,,8080"
 ```  
 
+* Restart virtual machine in order to make sure that port forwarding settings applied correctly. *Important!* Check that you don't have other VM's running that uses the same port (run docker-machine ls or check VirtualBox GUI)
+
+```shell
+  docker-machine restart jobdsl-workshop
+```
+
 * Jump into virtual machine by running
 
 ```shell
