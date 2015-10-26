@@ -16,8 +16,6 @@ Contains basic Jenkins Docker image setup required for the workshop.
     * mailer
     * matrix-project
     * ssh-credentials
-* quietperiod.groovy - set global Quiet Period to 0
-* executors.groovy - set number of executors on master to 0
 * createjob.groovy - will create job required to prebuild JobDSL jar file
 
 ## Setup on Mac OS and Windows
@@ -46,9 +44,11 @@ Contains basic Jenkins Docker image setup required for the workshop.
   docker-machine ssh jobdsl-workshop
 ```
 
-# Setup on Linux
+## Setup on Linux
 
 Make sure that you have Docker installed. If not then how to is [here]((https://docs.docker.com/installation/ubuntulinux/))
+
+## Preparations
 
 * Clone this repo or transfer existing one into virtual machine using docker-machine scp
 

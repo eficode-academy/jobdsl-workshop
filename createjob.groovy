@@ -1,5 +1,6 @@
 import hudson.model.*
 import jenkins.model.*
+import javaposse.jobdsl.plugin.*
 import hudson.tasks.Shell
 import hudson.plugins.git.GitSCM
 import hudson.plugins.git.BranchSpec
@@ -36,5 +37,23 @@ project.getBuildersList().add(shell)
 project.getPublishersList().add(artifactArchiver)
 
 project.save()
+
+//Define a seed job name
+def seedJobName = "seedjob"
+
+//Instantiate a new project
+def seedProject = new FreeStyleProject(parent, seedJobName);
+def jobDslBuildStep = new ExecuteDslScripts(
+'''
+job('test') {
+  steps {
+    shell('sleep 5')
+  }
+}
+''');
+
+seedProject.getBuildersList().add(jobDslBuildStep);
+seedProject.save()
+
 parent.reload()
 

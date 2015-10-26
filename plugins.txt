@@ -1,4 +1,4 @@
-job-dsl:1.37
+job-dsl:1.39
 copyartifact:1.36
 git:2.4.0
 credentials:1.22
