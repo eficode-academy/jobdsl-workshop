@@ -46,7 +46,7 @@ Contains basic Jenkins Docker image setup required for the workshop.
 
 ## Setup on Linux
 
-Make sure that you have Docker installed. If not then how to is [here]((https://docs.docker.com/installation/ubuntulinux/))
+Make sure that you have Docker installed. If not then how to is [here](https://docs.docker.com/installation/ubuntulinux/)
 
 ## Preparations
 
