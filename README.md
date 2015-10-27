@@ -9,6 +9,10 @@ Contains basic Jenkins Docker image setup required for the workshop.
   * [job-dsl](https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin) - JobDSL plugin
   * [copyartifact](https://wiki.jenkins-ci.org/display/JENKINS/Copy+Artifact+Plugin) - Copy artifact plugin. Required for creation of CI job as well as next one
   * [git](https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin) - Git plugin.
+  * [build-timeou](https://wiki.jenkins-ci.org/display/JENKINS/Build-timeout+Plugin) - Build Timeout plugin. Used in the library example
+  * Dependencies for the Build Timeout plugin
+    * token-macro
+  * [timestamper](https://wiki.jenkins-ci.org/display/JENKINS/Timestamper) - Timestamper plugin. Adds timestamps to console output. Used in the library example
   * Dependencies for Git plugin
     * credentials
     * git-client
@@ -53,7 +57,7 @@ Make sure that you have Docker installed. If not then how to is [here](https://d
 * Clone this repo or transfer existing one into virtual machine using docker-machine scp
 
 ```shell
-  git clone https://github.com/Praqma/jobdsl-workshop.git
+  git clone https://github.com/praqma-training/jobdsl-workshop.git
 ```
 
 * Build docker image

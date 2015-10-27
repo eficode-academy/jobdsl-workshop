@@ -1,5 +1,8 @@
 job-dsl:1.39
 copyartifact:1.36
+build-timeout:1.15
+token-macro:1.11
+timestamper:1.7.2
 git:2.4.0
 credentials:1.22
 git-client:1.18.0
