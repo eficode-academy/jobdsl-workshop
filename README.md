@@ -4,23 +4,7 @@ Contains basic Jenkins Docker image setup required for the workshop.
 
 ## What is included
 
-* Dockerfile - Thin docker build file. All magic is done in [Jenkins official build file](https://github.com/jenkinsci/docker/tree/9395d3fdd74cd43f03b1844fbb0c3e48d713cbc1). I'm only providing list of plugins to install and few groovy scripts for initial configuration 
-* plugins.txt - list of plugins that will be automatically installed. All versions of the plugins fixed as well as Jenkins version in order to ensure reproducibility of the setup as time goes.
-  * [job-dsl](https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin) - JobDSL plugin
-  * [copyartifact](https://wiki.jenkins-ci.org/display/JENKINS/Copy+Artifact+Plugin) - Copy artifact plugin. Required for creation of CI job as well as next one
-  * [git](https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin) - Git plugin.
-  * [build-timeou](https://wiki.jenkins-ci.org/display/JENKINS/Build-timeout+Plugin) - Build Timeout plugin. Used in the library example
-  * Dependencies for the Build Timeout plugin
-    * token-macro
-  * [timestamper](https://wiki.jenkins-ci.org/display/JENKINS/Timestamper) - Timestamper plugin. Adds timestamps to console output. Used in the library example
-  * Dependencies for Git plugin
-    * credentials
-    * git-client
-    * scm-api
-    * mailer
-    * matrix-project
-    * ssh-credentials
-* createjob.groovy - will create job required to prebuild JobDSL jar file
+TBD
 
 ## Setup on Mac OS and Windows
 
@@ -60,18 +44,11 @@ Make sure that you have Docker installed. If not then how to is [here](https://d
   git clone https://github.com/praqma-training/jobdsl-workshop.git
 ```
 
-* Build docker image
-
-```shell
-  cd jobdsl-workshop
-  docker build -t jobdsl-workshop .
-```
-
-* Kick off new container
+* Kick containers
  
 ```shell
-  cd jobdsl-workshop
-  docker run -p 8080:8080 jobdsl-workshop
+   cd jobdsl-workshop
+   bash -ex do-things.sh
 ```
 
 * After few seconds you should be able to see Jenkins page in your browser at localhost:8080! Time to do things!
