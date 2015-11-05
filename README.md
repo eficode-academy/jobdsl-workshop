@@ -42,10 +42,10 @@ Contains basic Jenkins Docker image setup required for the workshop.
   docker-machine restart jobdsl-workshop
 ```
 
-* Jump into virtual machine by running
+* Make sure that you have correct env settings for docker-machine
 
 ```shell
-  docker-machine ssh jobdsl-workshop
+  eval $(docker-machine env jobdsl-workshop)
 ```
 
 ## Setup on Linux
