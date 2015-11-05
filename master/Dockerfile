@@ -1,10 +1,4 @@
-FROM jenkins:1.609.3
-
-# Install maven - required for tutorial jobs
-USER root
-RUN apt-get update
-RUN apt-get install -y maven
-USER jenkins
+FROM jenkins:1.625.1
 
 # Install plugins
 COPY plugins.txt /usr/share/jenkins/plugins.txt
