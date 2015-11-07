@@ -8,8 +8,11 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
 
   # if -master is not provided and using --link jenkins:jenkins
   if [[ "$@" != *"-master "* ]] && [ ! -z "$JENKINS_PORT_8080_TCP_ADDR" ]; then
-    PARAMS="-master http://$JENKINS_PORT_8080_TCP_ADDR:$JENKINS_PORT_8080_TCP_PORT -executors 2"
+    PARAMS="-master http://$JENKINS_PORT_8080_TCP_ADDR:$JENKINS_PORT_8080_TCP_PORT"
   fi
+
+  # Set default number of executors (2 by default)
+  PARAMS="$PARAMS -executors ${NUM_OF_EXECUTORS:-2}"
 
   echo Running java $JAVA_OPTS -jar $JAR -fsroot $HOME $PARAMS "$@"
   exec java $JAVA_OPTS -jar $JAR -fsroot $HOME $PARAMS "$@"
