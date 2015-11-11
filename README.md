@@ -2,13 +2,11 @@
 
 Contains basic Jenkins Docker image setup required for the workshop.
 
-## What is included
-
-TBD
-
 ## Setup on Mac OS and Windows
 
-* Create new virtual machine using [docker-machine](https://docs.docker.com/installation/mac/)
+* [Download](https://www.docker.com/docker-toolbox) and [install](https://docs.docker.com/installation/mac/) Docker Toolbox 
+
+* Create new virtual machine using docker-machine(Part of the Docker toolbox)
 
 ```shell
   docker-machine create --driver virtualbox jobdsl-workshop
@@ -18,6 +16,7 @@ TBD
 
 ```shell
   VBoxManage controlvm jobdsl-workshop natpf1 "HTTP,tcp,127.0.0.1,8080,,8080"
+  VBoxManage controlvm jobdsl-workshop natpf1 "HTTP,tcp,127.0.0.1,50000,,50000"
 ```  
 
 * Restart virtual machine in order to make sure that port forwarding settings applied correctly. *Important!* Check that you don't have other VM's running that uses the same port (run docker-machine ls or check VirtualBox GUI)
@@ -38,7 +37,7 @@ Make sure that you have Docker installed. If not then how to is [here](https://d
 
 ## Preparations
 
-* Clone this repo or transfer existing one into virtual machine using docker-machine scp
+* Clone this repo
 
 ```shell
   git clone https://github.com/praqma-training/jobdsl-workshop.git
