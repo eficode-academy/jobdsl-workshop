@@ -2,8 +2,8 @@ import hudson.model.*
 import jenkins.model.*
 import java.net.InetAddress
 
-println "--> disabling master executors"
-Jenkins.instance.setNumExecutors(0)
+//println "--> disabling master executors"
+//Jenkins.instance.setNumExecutors(0)
 
 println "--> setting quite period to 3"
 Jenkins.instance.setQuietPeriod(3)
