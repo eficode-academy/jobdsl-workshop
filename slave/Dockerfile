@@ -1,5 +1,15 @@
 FROM java:8u45-jdk
 
+# Add support for proxies.
+# Values should be passed as build args
+# http://docs.docker.com/engine/reference/builder/#arg
+ENV http_proxy ${http_proxy:-}
+ENV https_proxy ${https_proxy:-}
+ENV no_proxy ${no_proxy:-}
+ENV HTTP_PROXY ${HTTP_PROXY:-}
+ENV HTTPS_PROXY ${HTTPS_PROXY:-}
+ENV NO_PROXY ${NO_PROXY:-}
+
 ENV JENKINS_SWARM_VERSION 2.0
 ENV HOME /home/jenkins-slave
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
@@ -17,8 +27,7 @@ RUN chown jenkins-slave /usr/local/bin/start.sh
 RUN chmod 755 /usr/local/bin/start.sh
 
 # Install tools
-RUN apt-get update
-RUN apt-get install -y maven git
+RUN apt-get update && apt-get install -y maven git
 
 USER jenkins-slave
 VOLUME /home/jenkins-slave
