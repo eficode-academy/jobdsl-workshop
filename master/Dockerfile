@@ -1,4 +1,4 @@
-FROM jenkins:1.625.1
+FROM jenkins:1.625.2
 
 # Add support for proxies.
 # Values should be passed as build args
